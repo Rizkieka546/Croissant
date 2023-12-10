@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION["login"])) {
+    header("location: ../login/login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,25 +31,26 @@
     <nav class="navbar fixed-top">
         <img src="assets/Group 1.png" alt="instagram">
         <div class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
-            <a href="#">Sign up</a>
+            <a href="index.php">Home</a>
+            <a href="menu.php">Menu</a>
+            <a href="contact.php">Contact us</a>
+            <a href="../signup/signup.php">Sign up</a>
+            <a href="../logout.php">Logout</a>
         </div>
     </nav>
 
-    <div class="card text-center">
+    <div class="break"></div>
+    <div class="card text-center container">
         <div class="card-header">
-          Featured
+            Heavenly CroissBrew
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card-body "> 
+          <h5 class="card-title" style="font-size: 50px; font-family: poppins; text-shadow: 1px 2px 4px;">About</h5>
+          <p class="card-text" style="font-family: poppins; color: black;">Taste and See Coffee Shop and Gallery offers a unique coffee house environment unlike any other in Macon. We are not only a place to drop in and get your morning cup of coffee (although you are more than welcome to do that), we are a place where you can sit down and enjoy that tailor-made cup of coffee. If you need to work, we have a seating area created specifically for you. If you need to rest, we have a soft-seating area in front of a stone fire place that is perfect for your weary mind and body. We offer a delicious variety of coffee roasted in house made by our professionally trained baristas. We have everything from classic coffee to our house made specialty beverages. All of our sauces & syrups are made in-house with all natural ingredients (no chemicals or preservatives) ensuring you the highest quality in taste & health. You can complete your coffee with one of our delicious sweet treats made by our very own baker. We look forward to serving you at Taste & See Coffee Shop and Gallery!</p>
+
         </div>
         <div class="card-footer text-body-secondary">
-          2 days ago
+
         </div>
       </div>
 

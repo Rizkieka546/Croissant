@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION["login"])) {
+    header("location: ../login/login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +16,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly CroissBrew</title>
+
+        <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100&family=Exo+2:ital,wght@0,400;1,300&family=Familjen+Grotesk:wght@500&family=Galindo&family=Inknut+Antiqua:wght@600&family=Inter&family=Irish+Grover&family=Istok+Web&family=Jomolhari&family=Merriweather+Sans:wght@500&family=Merriweather:wght@700&family=Outfit&family=Poppins:wght@100;400;500&family=REM:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100&family=Exo+2:ital,wght@0,400;1,300&family=Familjen+Grotesk:wght@500&family=Galindo&family=Inknut+Antiqua:wght@600&family=Inter&family=Irish+Grover&family=Istok+Web&family=Jomolhari&family=Merriweather+Sans:wght@500&family=Merriweather:wght@700&family=Outfit&family=Poppins:wght@100;400;500&family=REM:wght@300&display=swap" rel="stylesheet">
+
+        <!-- bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
 
 
     <link rel="stylesheet" href="style.css">
@@ -21,11 +37,12 @@
     <nav class="navbar fixed-top">
         <img src="assets/Group 1.png" alt="instagram">
         <div class="nav-menu">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
-            <a href="#">Sign up</a>
+            <a href="index.php">Home</a>
+            <a href="menu.php">Menu</a>
+            <a href="about.php">About us</a>
+            <a href="contact.php">Contact us</a>
+            <a href="../signup/signup.php">Sign up</a>
+            <a href="../logout.php">Logout</a>
         </div>
     </nav>
     <section class="hero-container" style="margin-bottom: 200px; padding-top: 200px;">
@@ -33,7 +50,7 @@
             <div>
                 <h1 class="heading">Heavenly CroissBrew
                 </h1>
-                <button class="btn-1">Search menu</button>
+                <a href="menu.php" class="btn-1">Search menu</a>
             </div>
         </div>
         <img src="assets/roticoff.jpg" alt="coffee">
@@ -60,15 +77,15 @@
                 <div class="card-body">
                   <h4 class="card-title" style="font-family: poppins; font-weight: bolder;">Pistachio Black </br>Croissant</h4>
                   <p class="card-text" style="font-family: poppins; font-size: 18px; color: black; font-weight: 600;">$0.224</p>
-                  <a href="#" class="btn btn-primary" style="background-color: #65451F;">Order now!!</a>
+                  <a href="#" class="btn btn-primary" style="background-color: #65451F; color: white;">Order now!!</a>
                 </div>
               </div>
-              <div class="card" style="width: 21rem;">
+        <div class="card" style="width: 21rem;">
                 <img src="assets/cheese.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h4 class="card-title" style="font-family: poppins; font-weight: 700;">Cheese </br>Croissant</h4>
                   <p class="card-text" style="font-family: poppins; font-size: 18px; color: black; font-weight: 600;">$2.176</p>
-                  <a href="#" class="btn btn-primary" style="background-color: #65451F;">Order now!!</a>
+                  <a href="#" class="btn btn-primary" style="background-color: #65451F; color: white;">Order now!!</a>
                 </div>
               </div>
               <div class="card" style="width: 21rem;">
@@ -76,25 +93,17 @@
                 <div class="card-body">
                   <h4 class="card-title" style="font-family: poppins; font-weight: bolder;">Pistachio Black </br>Croissant</h4>
                   <p class="card-text" style="font-family: poppins; font-size: 18px; color: black; font-weight: 600;">$2.176</p>
-                  <a href="#" class="btn btn-primary" style="background-color: #65451F; ">Order now!!</a>
+                  <a href="#" class="btn btn-primary" style="background-color: #65451F; color: white; ">Order now!!</a>
                 </div>
               </div>
     </section>
 
     <section class="button-menu">
-        <center>  <a href="#" class="btn btn-primary" style="background-color: #65451F;  box-shadow: 6px 10px 20px #65451F; font-size: 25px; 
-            width: 436px; height: 60px;" >Explore our menu >></a></center>
+        <center>  <a href="menu.php" class="btn btn-primary" style="background-color: #65451F;  box-shadow: 6px 10px 20px #65451F; font-size: 25px; 
+            width: 436px; height: 60px; color: white;" >Explore our menu >></a></center>
     </section>
 
-    <section class="about">
-        <section class="description-container">
-            <div class="card-body2" style="width: 300rem;">
-                <div>
-                    <h2 style="text-align: center;">About</h2>
-                    <p style="font-size: 10px;">Taste and See Coffee Shop and Gallery offers a unique coffee house environment unlike any other in Macon. We are not only a place to drop in and get your morning cup of coffee (although you are more than welcome to do that), we are a place where you can sit down and enjoy that tailor-made cup of coffee. If you need to work, we have a seating area created specifically for you. If you need to rest, we have a soft-seating area in front of a stone fire place that is perfect for your weary mind and body. We offer a delicious variety of coffee roasted in house made by our professionally trained baristas. We have everything from classic coffee to our house made specialty beverages. All of our sauces & syrups are made in-house with all natural ingredients (no chemicals or preservatives) ensuring you the highest quality in taste & health. You can complete your coffee with one of our delicious sweet treats made by our very own baker. We look forward to serving you at Taste & See Coffee Shop and Gallery!
-                    </p>
-                </div>
-    </section>
+
 
     <section class="button-container">
         <button class="btn">See More Now</button>
